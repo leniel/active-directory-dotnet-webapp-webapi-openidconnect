@@ -54,7 +54,7 @@ namespace TodoListWebApp
         public static readonly string Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);
 
         // This is the resource ID of the AAD Graph API.  We'll need this to request a token to call the Graph API.
-        string graphResourceId = ConfigurationManager.AppSettings["ida:GraphResourceId"];
+        static string graphResourceId = ConfigurationManager.AppSettings["ida:GraphResourceId"];
 
         public void ConfigureAuth(IAppBuilder app)
         {
