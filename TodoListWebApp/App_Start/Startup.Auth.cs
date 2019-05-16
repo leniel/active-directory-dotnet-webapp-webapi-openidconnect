@@ -44,7 +44,7 @@ namespace TodoListWebApp
         //
         private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
         private static string appKey = ConfigurationManager.AppSettings["ida:AppKey"];
-        private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"]+"&prompt=consent";
+        private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
         private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
         private static string redirectUri = ConfigurationManager.AppSettings["ida:RedirectUri"];
 
