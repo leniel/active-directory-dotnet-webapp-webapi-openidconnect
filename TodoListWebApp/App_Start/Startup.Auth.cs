@@ -15,8 +15,6 @@
 //----------------------------------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 
 // The following using statements were added for this sample.
@@ -29,9 +27,8 @@ using System.Globalization;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Threading.Tasks;
 using TodoListWebApp.Utils;
-using System.Security.Claims;
 using Microsoft.Owin.Security.Notifications;
-using Microsoft.IdentityModel.Protocols;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace TodoListWebApp
 {

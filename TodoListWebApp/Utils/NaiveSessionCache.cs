@@ -24,7 +24,7 @@ namespace TodoListWebApp.Utils
         public void Load()
         {
             SessionLock.EnterReadLock();
-            this.Deserialize((byte[])HttpContext.Current.Session[CacheId]);
+            this.Deserialize((byte[])HttpRuntime.Cache[CacheId]);
             SessionLock.ExitReadLock();
         }
 
@@ -36,7 +36,7 @@ namespace TodoListWebApp.Utils
             this.HasStateChanged = false;
 
             // Reflect changes in the persistent store
-            HttpContext.Current.Session[CacheId] = this.Serialize();
+            HttpRuntime.Cache[CacheId] = this.Serialize();
             SessionLock.ExitWriteLock();
         }
 
@@ -44,7 +44,7 @@ namespace TodoListWebApp.Utils
         public override void Clear()
         {
             base.Clear();
-            System.Web.HttpContext.Current.Session.Remove(CacheId);
+            System.Web.HttpRuntime.Cache.Remove(CacheId);
         }
 
         // Triggered right before ADAL needs to access the cache.

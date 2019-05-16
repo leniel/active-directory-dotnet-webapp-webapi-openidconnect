@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Owin.Security.ActiveDirectory;
 using Owin;
 
@@ -14,7 +15,7 @@ namespace TodoListService
                 {
                     Tenant = ConfigurationManager.AppSettings["ida:Tenant"],
 
-                    TokenValidationParameters = new System.IdentityModel.Tokens.TokenValidationParameters()
+                    TokenValidationParameters = new TokenValidationParameters()
                     {
                         ValidAudience = ConfigurationManager.AppSettings["ida:Audience"]
                     }        
